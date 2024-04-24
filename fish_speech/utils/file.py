@@ -45,7 +45,7 @@ def list_files(
         raise FileNotFoundError(f"Directory {path} does not exist.")
 
     # files = [Path(f) for f in glob(str(path / "**/*"), recursive=recursive)]
-    files = [file for ext in extensions for file in directory.glob(f"**/*{ext}")]
+    files = [file for ext in extensions for file in path.glob(f"**/*{ext}")]
 
     # if extensions is not None:
     #    files = [f for f in files if f.suffix in extensions]
